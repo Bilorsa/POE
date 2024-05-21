@@ -1,0 +1,234 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">org</span><span class="s2">.</span><span class="s1">example</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+<span class="s3">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or</span>
+<span class="s3">// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.</span>
+
+
+        <span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+
+            <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+                <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Welcome to the Registration and Login page&quot;</span><span class="s2">);</span>
+
+
+
+                <span class="s0">boolean </span><span class="s1">loggedIn </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+
+
+                <span class="s0">while </span><span class="s2">(!</span><span class="s1">loggedIn</span><span class="s2">) {</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Please choose an option: &quot;</span><span class="s2">);</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;1. Register&quot;</span><span class="s2">);</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;2. Login&quot;</span><span class="s2">);</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;3. Exit&quot;</span><span class="s2">);</span>
+
+
+
+                    <span class="s0">int </span><span class="s1">option </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+
+                    <span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">(); </span><span class="s3">// New character line</span>
+
+
+
+                    <span class="s0">switch </span><span class="s2">(</span><span class="s1">option</span><span class="s2">) {</span>
+
+                        <span class="s0">case </span><span class="s5">1</span><span class="s2">:</span>
+
+                            <span class="s1">registerUser</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">);</span>
+
+                            <span class="s0">break</span><span class="s2">;</span>
+
+
+
+                        <span class="s0">case </span><span class="s5">2</span><span class="s2">:</span>
+
+                            <span class="s1">loggedIn </span><span class="s2">= </span><span class="s1">login</span><span class="s2">(</span><span class="s1">scanner</span><span class="s2">);</span>
+
+                            <span class="s0">break</span><span class="s2">;</span>
+
+
+
+                        <span class="s0">case </span><span class="s5">3</span><span class="s2">:</span>
+
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Thank you for using this page!&quot;</span><span class="s2">);</span>
+
+                            <span class="s0">return</span><span class="s2">;</span>
+
+
+
+                        <span class="s0">default</span><span class="s2">:</span>
+
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Invalid option. Please try again.&quot;</span><span class="s2">);</span>
+
+                            <span class="s0">break</span><span class="s2">;</span>
+
+                    <span class="s2">}</span>
+
+                <span class="s2">}</span>
+
+            <span class="s2">}</span>
+
+
+
+            <span class="s0">private static void </span><span class="s1">registerUser</span><span class="s2">(</span><span class="s1">Scanner scanner</span><span class="s2">) {</span>
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;===== Register =====&quot;</span><span class="s2">);</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your username (5 characters long and contain an underscore): &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String username </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s0">while </span><span class="s2">(</span><span class="s1">username</span><span class="s2">.</span><span class="s1">length</span><span class="s2">() != </span><span class="s5">5 </span><span class="s2">|| !</span><span class="s1">username</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s4">&quot;_&quot;</span><span class="s2">)) { </span><span class="s3">//User must insert an underscore</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Invalid username. Please try again: &quot;</span><span class="s2">);</span>
+
+                    <span class="s1">username </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                <span class="s2">}</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your password (1 capital letter, 1 number, 1 special character): &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String password </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s0">while </span><span class="s2">(!</span><span class="s1">isValidPassword</span><span class="s2">(</span><span class="s1">password</span><span class="s2">)) {</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Invalid password. Please try again: &quot;</span><span class="s2">);</span>
+
+                    <span class="s1">password </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                <span class="s2">}</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your first name: &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String firstName </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your last name: &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String lastName </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Registration successful!&quot;</span><span class="s2">);</span>
+
+
+
+            <span class="s2">}</span>
+
+
+
+            <span class="s0">private static boolean </span><span class="s1">login</span><span class="s2">(</span><span class="s1">Scanner scanner</span><span class="s2">) {</span>
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;===== Login =====&quot;</span><span class="s2">);</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your username: &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String username </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Enter your password: &quot;</span><span class="s2">);</span>
+
+                <span class="s1">String password </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+                <span class="s3">// Check if the username and password correlate  </span>
+
+
+
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">username</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;admin&quot;</span><span class="s2">) &amp;&amp; </span><span class="s1">password</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;admin123&quot;</span><span class="s2">)) {</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Login successful!&quot;</span><span class="s2">);</span>
+
+                    <span class="s0">return true</span><span class="s2">;</span>
+
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Invalid username password. Please try again.&quot;</span><span class="s2">);</span>
+
+                    <span class="s0">return false</span><span class="s2">;</span>
+
+                <span class="s2">}</span>
+
+            <span class="s2">}</span>
+
+
+
+            <span class="s0">private static boolean </span><span class="s1">isValidPassword</span><span class="s2">(</span><span class="s1">String password</span><span class="s2">) {</span>
+
+                <span class="s0">boolean </span><span class="s1">hasCapital </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+                <span class="s0">boolean </span><span class="s1">hasNumber </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+                <span class="s0">boolean </span><span class="s1">hasSpecialChar </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+
+
+                <span class="s0">for </span><span class="s2">(</span><span class="s0">char </span><span class="s1">c </span><span class="s2">: </span><span class="s1">password</span><span class="s2">.</span><span class="s1">toCharArray</span><span class="s2">()) {</span>
+
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">Character</span><span class="s2">.</span><span class="s1">isUpperCase</span><span class="s2">(</span><span class="s1">c</span><span class="s2">)) {</span>
+
+                        <span class="s1">hasCapital </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+
+                    <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">Character</span><span class="s2">.</span><span class="s1">isDigit</span><span class="s2">(</span><span class="s1">c</span><span class="s2">)) {</span>
+
+                        <span class="s1">hasNumber </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+
+                    <span class="s2">} </span><span class="s0">else if </span><span class="s2">(!</span><span class="s1">Character</span><span class="s2">.</span><span class="s1">isLetterOrDigit</span><span class="s2">(</span><span class="s1">c</span><span class="s2">)) {</span>
+
+                        <span class="s1">hasSpecialChar </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+
+                    <span class="s2">}</span>
+
+                <span class="s2">}</span>
+
+
+
+                <span class="s0">return </span><span class="s1">hasCapital </span><span class="s2">&amp;&amp; </span><span class="s1">hasNumber </span><span class="s2">&amp;&amp; </span><span class="s1">hasSpecialChar</span><span class="s2">;</span>
+
+            <span class="s2">}</span>
+
+        <span class="s2">}</span></pre>
+</body>
+</html>
