@@ -224,6 +224,7 @@ class Task {
     private String taskID;
     private String taskStatus;
 
+    //Allows user to insert
     public Task(String taskName, String developerDetails) {
         this.taskName = taskName;
         this.developerDetails = developerDetails;
@@ -269,7 +270,7 @@ class Task {
 
  class Task1 {
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
+
         int numTasks = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of tasks to add"));
         Task[] tasks = new Task[numTasks];
         int totalHours = 0;
